@@ -1,0 +1,16 @@
+language: elixir
+
+env:
+  - MIX_ENV=test
+
+addons:
+  postgresql: "9.4"
+
+services:
+  - postgresql
+
+before_script:
+  - mix do ecto.setup
+  
+script:
+  - mix test
